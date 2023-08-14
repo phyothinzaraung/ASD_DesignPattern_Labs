@@ -13,6 +13,8 @@ public class Account {
 	Collection<AccountEntry> entryList = new ArrayList<AccountEntry>();
 	Customer customer;
 
+	InterestCalculator interestCalculator;
+
 	public Account (long accountnr, String accountType){
 		this.accountnumber = accountnr;
 		this.accountType = accountType;
@@ -78,5 +80,9 @@ public class Account {
 			InterestCalculator checkingAccountCalculator = new CheckingAccountInterestCalculator();
 			checkingAccountCalculator.addInterest(account);
 		}
+	}
+
+	public void setInterestCalculator(InterestCalculator interestCalculator) {
+		this.interestCalculator = interestCalculator;
 	}
 }
